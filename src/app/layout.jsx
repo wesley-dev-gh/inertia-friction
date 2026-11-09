@@ -4,7 +4,7 @@ import TabTitle from "@/components/TabTitle";
 import ScreenBlocker from "@/components/ScreenBlocker";
 
 export const metadata = {
-  metadataBase: new URL("https://inertiafrictionrc.vercel.app/"),
+  metadataBase: new URL("https://inertiafrictionrc-gamma.vercel.app/"),
 
   title: {
     default: "Inertia Friction — Interactive Physics Experience",

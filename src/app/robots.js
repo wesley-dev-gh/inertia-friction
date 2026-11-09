@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://inertiafrictionrc.vercel.app/sitemap.xml",
+    sitemap: "https://inertiafrictionrc-gamma.vercel.app/sitemap.xml",
   };
 }
