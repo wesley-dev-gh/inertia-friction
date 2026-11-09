@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Inertia Friction
 
-## Getting Started
+Experiência interativa de física feita com Next.js. Uma malha de pontos é desenhada em tempo real no Canvas e reage ao movimento, simulando inércia, elasticidade e atrito.
 
-First, run the development server:
+## Requisitos
+
+- Node.js e npm
+
+## Executar localmente
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Interações
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Computador:** mova o ponteiro sobre os pontos para deslocá-los. Eles retornam gradualmente às posições originais.
+- **Celular ou tablet:** toque na tela para gerar um impulso. Em dispositivos e navegadores compatíveis.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Comandos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run dev    # inicia o servidor de desenvolvimento
+npm run lint   # verifica o código com ESLint
+npm run build  # gera a versão de produção
+npm run start  # serve a versão gerada por npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Estrutura do projeto
 
-## Deploy on Vercel
+```text
+src/
+	app/
+		page.jsx       # página principal
+		layout.jsx     # layout global e metadados
+		globals.css    # estilos globais e tema Tailwind
+		robots.js      # regras para mecanismos de busca
+		sitemap.js     # sitemap do site
+	components/      # Canvas, laterais, listas e layout
+	data/data.js     # faixas exibidas na interface
+	hooks/use-home.js# animação e interações da simulação
+public/
+	fonts/           # fontes locais
+	images/          # imagens estáticas
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+As listas de faixas podem ser alteradas em `src/data/data.js`. A simulação e seus controles ficam em `src/hooks/use-home.js`; a composição da tela começa em `src/app/page.jsx`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Tecnologias
+
+- Next.js 16 e React 19
+- Tailwind CSS 4
+- Canvas 2D e APIs de ponteiro e movimento do navegador
